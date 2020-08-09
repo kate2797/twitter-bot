@@ -15,8 +15,8 @@ This Twitter bot likes 800 tweets a day under the following hashtags: **#100Days
 # Preview
 
 [@bitemybot](https://twitter.com/bitemybot)
-<br />
-<img src="preview.png" alt="Twitter timeline" width="60%" height="60%"/>
+<br><br>
+<img src="preview.png" alt="Twitter timeline" width="70%" height="70%"/>
 
 # How it works
 
