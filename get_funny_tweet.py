@@ -31,6 +31,7 @@ noun_pl_sentences = [
     f"10 reasons why you should know how to program in {random_word[0].title()}",
     f"Why do software developers always say 'it works on my {random_word[0]}'?",
     f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
+    f"console.log('{random_word[0]}')",
 ]
 
 noun_sg_sentences = [
@@ -48,6 +49,7 @@ noun_sg_sentences = [
     f"The Big O notation of {random_word[0]} is n^2",
     f"The {random_word[0]} replies back: 'Darling, I am a programmer'",
     f"10 reasons why you should know how to program in {random_word[0]}",
+    f"console.log('{random_word[0]}')",
 ]
 
 verb_sentences = [
@@ -60,6 +62,7 @@ verb_sentences = [
     f"Real software engineers don't {random_word[0]} their code",
     f"One programmer says to another. How well can you {random_word[0]}?",
     f"What does a coder do when a recursion program fails to {random_word[0]} after several attempts?",
+    f"console.log('{random_word[0]}')",
 ]
 
 adjective_sentences = [
@@ -73,7 +76,8 @@ adjective_sentences = [
     f"Beware of the {random_word[0]} programmer, they may byte",
     f"A coworker who is writing documentation about some {random_word[0]} software was asking me 'What do you call that UI element? Is it a sidebar or a pane?'",
     f"I'm taking a forty-day break from {random_word[0]} software",
-    f"I tried to write a code for {random_word[0]} robots but it didn’t work"
+    f"I tried to write a code for {random_word[0]} robots but it didn’t work",
+    f"console.log('{random_word[0]}')",
 ]
 
 
