@@ -10,9 +10,9 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 # Handle linking tweets based on multiple search terms
-number_of_tweets = 4
+number_of_tweets = 10
 terms_list = ["100DaysOfCode", "CodeNewbie",
-              "codenewbie", "100daysofcode", "Python"]
+              "codenewbie", "100daysofcode"]
 
 for search_term in terms_list:
     for tweet in tweepy.Cursor(api.search, search_term).items(number_of_tweets):
