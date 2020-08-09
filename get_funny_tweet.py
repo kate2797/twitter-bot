@@ -68,7 +68,7 @@ adjective_sentences = [
     f"I tried to write a code for {random_word[0]} robots but it didn’t work"
 ]
 
-# Part of speech tagging
+# Part-of-speech (POS) tagging
 pos_nouns_pl = ["NNS", "NNPS"]
 pos_nouns_sg = ["NN", "NNP"]
 pos_verbs = "VB"
