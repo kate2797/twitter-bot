@@ -8,10 +8,13 @@ from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
 # Twitter authorisation
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-api = tweepy.API(auth)
+try:
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    api = tweepy.API(auth)
+except tweepy.TweepError:
+    print('Error! Failed to get access token.')
 
-# Part-of-speech (POS) tagging
+# NLTK part-of-speech (POS) tagging
 pos_nouns_pl = ["NNS", "NNPS"]
 pos_nouns_sg = ["NN", "NNP"]
 pos_verbs = ["VB"]
