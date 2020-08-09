@@ -30,7 +30,7 @@ To generate the funny tweet, I wrote several sentences with one word missing. Th
 - Tweepy
 - [Random word API](https://random-word-api.herokuapp.com/home)
 
-# Inspiration for the programming related sentences
+# Inspiration for the sentences
 
 - [Programmer puns](https://punstoppable.com/Programmer-puns)
 - [Programming jokes](http://www.devtopics.com/best-programming-jokes/)
