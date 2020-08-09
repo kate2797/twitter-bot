@@ -18,10 +18,7 @@ mention = str(mentions[0].text).lower().replace("@bitemybot ", "")
 
 random_word = requests.get(
     'https://random-word-api.herokuapp.com/word?number=1').json()
-
 word_type = nltk.pos_tag(random_word)[0][-1]
-print(random_word)
-print(word_type)
 
 noun = [
     f"Let me execute this {random_word[0]} for you",
