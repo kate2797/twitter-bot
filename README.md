@@ -22,7 +22,7 @@ This Twitter bot likes 800 tweets a day under the following hashtags: **#100Days
 
 The bot uses Tweepy to accomplish all of its functionalities – to find and like tweets containing certain hashtags and like them, to automatically follow back all users that follow the bot account and to publish tweets in the bots behalf.
 
-To generate the funny tweet, I wrote several sentences with one word missing. This word is obtained from [Random word API](https://random-word-api.herokuapp.com/home) and then is semantically tagged (POS tagging) using the NLTK library which generates a label that corresponds to its part of speech. The word is then placed into sentences accordingly.
+To generate the funny tweet, I wrote several sentences with one word missing. This word is obtained from [Random word API](https://random-word-api.herokuapp.com/home) and then is semantically tagged (POS tagging) using the NLTK library which generates a label that corresponds to its part of speech. The word is then placed into sentences accordingly, obeying to the rules of semantics.
 
 # Technologies
 
