@@ -11,16 +11,18 @@ auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-# If does not match my categories, try again
+# If does not match my categories, try calling the API again –> TO-DO
 random_word = requests.get(
     'https://random-word-api.herokuapp.com/word?number=1').json()
+print(random_word)
 word_type = nltk.pos_tag(random_word)[0][-1]
+print(word_type)
 
 # Set up some sentences
 noun_pl_sentences = [
     f"10 reasons why you should know how to program in {random_word[0]}",
     f"Why do software developers always say 'it works on my {random_word[0]}'?",
-    f"My friend quit their job as a programmer because they didn't like {random_word[0]}'",
+    f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
 ]
 
 noun_sg_sentences = [
@@ -69,8 +71,8 @@ adjective_sentences = [
 # Part of speech tagging
 pos_nouns_pl = ["NNS", "NNPS"]
 pos_nouns_sg = ["NN", "NNP"]
-pos_verbs == "VB"
-pos_adjectives == "JJ"
+pos_verbs = "VB"
+pos_adjectives = "JJ"
 
 if word_type in pos_nouns_pl:
     api.update_status(random.choice(noun_pl_sentences))
