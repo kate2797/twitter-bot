@@ -10,7 +10,6 @@ api = tweepy.API(auth)
 
 mentions = api.mentions_timeline(count=1)
 mention = str(mentions[0].text).lower().replace("@bitemybot ", "")
-
 word_type = wordnet.synsets(mention)[0].pos()
 
 noun = [
