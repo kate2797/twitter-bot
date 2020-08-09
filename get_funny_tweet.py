@@ -6,17 +6,25 @@ import nltk
 
 from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
-# Authorisation
+# Twitter authorisation
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-# If does not match my categories, try calling the API again –> TO-DO
-random_word = requests.get(
-    'https://random-word-api.herokuapp.com/word?number=1').json()
-print(random_word)
-word_type = nltk.pos_tag(random_word)[0][-1]
-print(word_type)
+# Part-of-speech (POS) tagging
+pos_nouns_pl = ["NNS", "NNPS"]
+pos_nouns_sg = ["NN", "NNP"]
+pos_verbs = ["VB"]
+pos_adjectives = ["JJ"]
+
+# Get random word from API
+word_type = None
+random_word = None
+while word_type not in pos_nouns_pl + pos_nouns_sg + pos_verbs + pos_adjectives:
+    get_word = requests.get(
+        'https://random-word-api.herokuapp.com/word?number=1').json()
+    word_type = nltk.pos_tag(get_word)[0][-1]
+    random_word = get_word
 
 # Set up some sentences
 noun_pl_sentences = [
@@ -26,11 +34,11 @@ noun_pl_sentences = [
 ]
 
 noun_sg_sentences = [
-    f"Hey, I'm working as software {random_word[0]}. What about you?"
+    f"Hey, I'm working as software {random_word[0]}. What about you?",
     f"My friend quit their job as a programmer because they didn't like {random_word[0]}'",
     f"{random_word[0].title()} is one of the best places to learn to code for free",
     "Binary {random_word[0]} is used to perform a very efficient search on sorted dataset",
-    f"{random_word[0].title()} fixes 10 of the bugs"
+    f"{random_word[0].title()} fixes 10 of the bugs",
     f"Programmer to his son: 'Here, I brought you a new {random_word[0]}'",
     f"{random_word[0].title()} defines the meaning and structure of web content",
     f"I said to my computer science professor that my {random_word[0]} ate my homework",
@@ -68,17 +76,13 @@ adjective_sentences = [
     f"I tried to write a code for {random_word[0]} robots but it didn’t work"
 ]
 
-# Part-of-speech (POS) tagging
-pos_nouns_pl = ["NNS", "NNPS"]
-pos_nouns_sg = ["NN", "NNP"]
-pos_verbs = "VB"
-pos_adjectives = "JJ"
 
+# Return appropriate sentence
 if word_type in pos_nouns_pl:
     api.update_status(random.choice(noun_pl_sentences))
 elif word_type in pos_nouns_sg:
     api.update_status(random.choice(noun_sg_sentences))
-elif word_type == pos_verbs:
+elif word_type in pos_verbs:
     api.update_status(random.choice(verb_sentences))
-elif word_type == pos_adjectives:
+elif word_type in pos_adjectives:
     api.update_status(random.choice(adjective_sentences))
