@@ -80,7 +80,6 @@ adjective_sentences = [
     f"console.log('{random_word[0]}')",
 ]
 
-
 # Return appropriate sentence
 if word_type in pos_nouns_pl:
     api.update_status(random.choice(noun_pl_sentences))

@@ -6,20 +6,25 @@ from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
 # Twitter authorisation
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-api = tweepy.API(auth)
+try:
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    api = tweepy.API(auth)
+except tweepy.TweepError:
+    print('Error! Failed to get access token.')
 
-# Handle linking tweets based on multiple search terms
-number_of_tweets = 100
-terms_list = ["100DaysOfCode", "CodeNewbie"]
 
-for search_term in terms_list:
-    for tweet in tweepy.Cursor(api.search, search_term).items(number_of_tweets):
-        try:
-            print("Liked!")
-            tweet.favorite()
-            time.sleep(5)
-        except tweepy.TweepError as e:
-            print(e.reason)
-        except StopIteration:
-            break
+def like_by_keywords(number_of_tweets, keywords):
+    """ Likes tweets with specific keywords. """
+    for keyword in keywords:
+        for tweet in tweepy.Cursor(api.search, keyword).items(number_of_tweets):
+            try:
+                print("Liked!")
+                tweet.favorite()
+                time.sleep(5)
+            except tweepy.TweepError as e:
+                print(e.reason)
+            except StopIteration:
+                break
+
+
+like_by_keywords(10, ["100DaysOfCode", "CodeNewbie"])
