@@ -18,7 +18,7 @@ for search_term in terms_list:
         try:
             print("Liked!")
             tweet.favorite()
-            time.sleep(6)
+            time.sleep(5)
         except tweepy.TweepError as e:
             print(e.reason)
         except StopIteration:
