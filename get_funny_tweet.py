@@ -28,7 +28,7 @@ while word_type not in pos_nouns_pl + pos_nouns_sg + pos_verbs + pos_adjectives:
 
 # Set up some sentences
 noun_pl_sentences = [
-    f"10 reasons why you should know how to program in {random_word[0]}",
+    f"10 reasons why you should know how to program in {random_word[0].title()}",
     f"Why do software developers always say 'it works on my {random_word[0]}'?",
     f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
 ]
