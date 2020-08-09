@@ -25,12 +25,15 @@ noun = [
     f"The Big O notation of {random_word[0]} is n^2",
     f"The {random_word[0]} replies back: 'Darling, I am a programmer'",
     f"10 reasons why you should know how to program in {random_word[0]}",
-    f"{random_word[0].title()}Script",
+    f"{random_word[0].title()}Script is the new JavaScript",
     f"Programmer to his son: 'Here, I brought you a new {random_word[0]}'",
     f"Programmer {random_word[0]} fixes 10 of the bugs"
     f"I really {random_word[0]} React",
     f"Binary {random_word[0]} is used to perform a very efficient search on sorted dataset",
-    f"{random_word[0].title()} is one of the best places to learn to code for free"
+    f"{random_word[0].title()} is one of the best places to learn to code for free",
+    f"My friend quit their job as a programmer because they didn't like {random_word[0]}'",
+    f"Why do software developers always say 'it works on my {random_word[0]}'?",
+    f"Hey, I'm working as software {random_word[0]}. What about you?"
 ]
 
 verb = [
@@ -40,7 +43,10 @@ verb = [
     f"Let us {random_word[0]} needless data on your system",
     f"A computer program will always do what you {random_word[0]} it to do",
     f"Real software engineers don't {random_word[0]} their code",
-    f"{random_word[0].title()} defines the meaning and structure of web content"
+    f"{random_word[0].title()} defines the meaning and structure of web content",
+    f"One programmer says to another. How well can you {random_word[0]}?",
+    f"What does a coder do when a recursion program fails to {random_word[0]} after several attempts?",
+    f"I said to my computer science professor that my {random_word[0]} ate my homework."
 
 ]
 
@@ -51,7 +57,11 @@ adjective = [
     f"Lots of {random_word[0]} semicolons and parentheses",
     f"Programmer produces code they believe is {random_word[0]}",
     f"I'm so {random_word[0]} at programming I don't even need to test before I ship code",
-    f"For Programmers, a good day starts with a {random_word[0]} blend of coffee"
+    f"For Programmers, a good day starts with a {random_word[0]} blend of coffee",
+    f"Beware of the {random_word[0]} programmer, they may byte",
+    f"A coworker who is writing documentation about some {random_word[0]} software was asking me 'What do you call that UI element? Is it a sidebar or a pane?'",
+    f"I'm taking a forty-day break from {random_word[0]} software",
+    f"I tried to write a code for {random_word[0]} robots but it didn’t work"
 
 ]
 
