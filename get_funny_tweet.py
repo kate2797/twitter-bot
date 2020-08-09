@@ -35,6 +35,7 @@ noun_pl_sentences = [
     f"Why do software developers always say 'it works on my {random_word[0]}'?",
     f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
     f"console.log('{random_word[0]}')",
+    f"A major skill in computer programming is understanding how to work with {random_word[0]}",
 ]
 
 noun_sg_sentences = [
@@ -66,6 +67,7 @@ verb_sentences = [
     f"One programmer says to another. How well can you {random_word[0]}?",
     f"What does a coder do when a recursion program fails to {random_word[0]} after several attempts?",
     f"console.log('{random_word[0]}')",
+    f"They desperately needed another progammer since the current one only knew how to {random_word[0]} in C++",
 ]
 
 adjective_sentences = [
