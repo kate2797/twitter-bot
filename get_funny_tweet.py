@@ -40,7 +40,7 @@ noun_pl_sentences = [
 
 noun_sg_sentences = [
     f"Hey, I'm working as software {random_word[0]}. What about you?",
-    f"My friend quit their job as a programmer because they didn't like {random_word[0]}'",
+    f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
     f"{random_word[0].title()} is one of the best places to learn to code for free",
     "Binary {random_word[0]} is used to perform a very efficient search on sorted dataset",
     f"{random_word[0].title()} fixes 10 of the bugs",

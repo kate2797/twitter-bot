@@ -21,11 +21,11 @@ def like_by_keywords(number_of_tweets, keywords):
             try:
                 print("Liked!")
                 tweet.favorite()
-                time.sleep(3)
             except tweepy.TweepError as e:
                 print(e.reason)
             except StopIteration:
                 break
 
 
-like_by_keywords(20, ["100DaysOfCode", "CodeNewbie"])
+like_by_keywords(
+    10, ["100DaysOfProjects", "100DaysOfCloud", "100DaysOfCode", "CodeNewbie"])
