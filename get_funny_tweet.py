@@ -1,8 +1,9 @@
-from re import search
 import tweepy
 import random
 import requests
 import nltk
+
+# Cannot have 2 of the same responses za sebou
 
 from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
