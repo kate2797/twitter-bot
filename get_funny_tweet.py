@@ -42,7 +42,7 @@ noun_sg_sentences = [
     f"My friend quit their job as a programmer because they didn't like {random_word[0]}",
     f"{random_word[0].title()} is one of the best places to learn to code for free",
     "Binary {random_word[0]} is used to perform a very efficient search on sorted dataset",
-    f"{random_word[0].title()} fixes 10 of the bugs",
+    f"{random_word[0].title()} automatically fixes every bug present in your code",
     f"Programmer to his son: 'Here, I brought you a new {random_word[0]}'",
     f"{random_word[0].title()} defines the meaning and structure of web content",
     f"I said to my computer science professor that my {random_word[0]} ate my homework",
