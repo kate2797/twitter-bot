@@ -3,6 +3,9 @@ import random
 import requests
 import nltk
 
+# TODO:
+# ADD TYPES
+
 from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
 # POS tagging
@@ -10,12 +13,6 @@ pos_nouns_pl = ["NNS", "NNPS"]
 pos_nouns_sg = ["NN", "NNP"]
 pos_verbs = ["VB"]
 pos_adjectives = ["JJ"]
-
-previous_tweet = None
-
-# TODO:
-# ADD TYPES
-# NEVER RETURN THE SAME SENTECE AS PREVIOUSLY
 
 
 def authorise():
@@ -44,7 +41,7 @@ def get_random_word():
 
 
 def get_random_sentence(random_word, word_type, pos_adjectives, pos_nouns_sg, pos_nouns_pl, pos_verbs):
-    """ Get a random sentence from these predefined options. """
+    """ Get a random but syntactically correct sentence. """
 
     noun_pl_sentences = [
         f"10 reasons why you should know how to program in {random_word[0].title()}",
@@ -125,6 +122,8 @@ def tweet(tweepy_api, sentence):
 
 
 def main():
+    """ Executes the whole program. """
+
     api = authorise()
     random_word, word_type = get_random_word()
     sentence = get_random_sentence(random_word, word_type, pos_adjectives,
