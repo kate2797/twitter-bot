@@ -11,6 +11,8 @@ pos_nouns_sg = ["NN", "NNP"]
 pos_verbs = ["VB"]
 pos_adjectives = ["JJ"]
 
+previous_tweet = None
+
 # TODO:
 # ADD TYPES
 # NEVER RETURN THE SAME SENTECE AS PREVIOUSLY
@@ -18,6 +20,7 @@ pos_adjectives = ["JJ"]
 
 def authorise():
     """ Twitter authorisation. """
+
     auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
     try:
         auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -29,6 +32,7 @@ def authorise():
 
 def get_random_word():
     """ Get random word from randoword API. """
+
     word_type = None
     word = None
     while word_type not in pos_nouns_pl + pos_nouns_sg + pos_verbs + pos_adjectives:
@@ -39,8 +43,9 @@ def get_random_word():
     return word, word_type
 
 
-def tweet_random_sentence(random_word, pos_adjectives, pos_nouns_sg, pos_nouns_pl, pos_verbs, api, word_type):
+def get_random_sentence(random_word, word_type, pos_adjectives, pos_nouns_sg, pos_nouns_pl, pos_verbs):
     """ Get a random sentence from these predefined options. """
+
     noun_pl_sentences = [
         f"10 reasons why you should know how to program in {random_word[0].title()}",
         f"Why do software developers always say 'it works on my {random_word[0]}'?",
@@ -96,22 +101,36 @@ def tweet_random_sentence(random_word, pos_adjectives, pos_nouns_sg, pos_nouns_p
         f"console.log('{random_word[0]}')",
     ]
 
-    # Select sentence based on the word type
     if word_type in pos_nouns_pl:
-        api.update_status(random.choice(noun_pl_sentences))
+        return random.choice(noun_pl_sentences)
+
     elif word_type in pos_nouns_sg:
-        api.update_status(random.choice(noun_sg_sentences))
+        return random.choice(noun_sg_sentences)
+
     elif word_type in pos_verbs:
-        api.update_status(random.choice(verb_sentences))
+        return random.choice(verb_sentences)
+
     elif word_type in pos_adjectives:
-        api.update_status(random.choice(adjective_sentences))
+        return random.choice(adjective_sentences)
+
+
+def tweet(tweepy_api, sentence):
+    """ Tweet. """
+
+    try:
+        tweet = tweepy_api.update_status(sentence)
+        return tweet
+    except tweepy.TweepError as e:
+        print(e)
 
 
 def main():
     api = authorise()
     random_word, word_type = get_random_word()
-    tweet_random_sentence(random_word, pos_adjectives,
-                          pos_nouns_sg, pos_nouns_pl, pos_verbs, api, word_type)
+    sentence = get_random_sentence(random_word, word_type, pos_adjectives,
+                                   pos_nouns_sg, pos_nouns_pl, pos_verbs)
+    tweeted = tweet(api, sentence)
+    return tweeted
 
 
 main()
