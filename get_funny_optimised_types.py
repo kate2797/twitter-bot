@@ -8,6 +8,9 @@ import nltk
 
 from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
+# Typing
+from typing import Any, Tuple, List
+
 # POS tagging
 pos_nouns_pl = ["NNS", "NNPS"]
 pos_nouns_sg = ["NN", "NNP"]
@@ -15,7 +18,7 @@ pos_verbs = ["VB"]
 pos_adjectives = ["JJ"]
 
 
-def authorise():
+def authorise() -> Any:
     """ Twitter authorisation. """
 
     auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
@@ -27,7 +30,7 @@ def authorise():
         print('Error! Failed to get access token.')
 
 
-def get_random_word():
+def get_random_word() -> Tuple[str, str]:
     """ Get random word from randoword API. """
 
     word_type = None
@@ -40,7 +43,7 @@ def get_random_word():
     return word, word_type
 
 
-def get_random_sentence(random_word, word_type, pos_adjectives, pos_nouns_sg, pos_nouns_pl, pos_verbs):
+def get_random_sentence(random_word: str, word_type: str, pos_adjectives: List[str], pos_nouns_sg: List[str], pos_nouns_pl: List[str], pos_verbs: List[str]) -> str:
     """ Get a random but syntactically correct sentence. """
 
     noun_pl_sentences = [
@@ -111,7 +114,7 @@ def get_random_sentence(random_word, word_type, pos_adjectives, pos_nouns_sg, po
         return random.choice(adjective_sentences)
 
 
-def tweet(tweepy_api, sentence):
+def tweet(tweepy_api: Any, sentence: str) -> str:
     """ Tweet. """
 
     try:
@@ -121,7 +124,7 @@ def tweet(tweepy_api, sentence):
         print(e)
 
 
-def main():
+def main() -> str:
     """ Executes the whole program. """
 
     api = authorise()
