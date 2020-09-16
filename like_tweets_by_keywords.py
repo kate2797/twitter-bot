@@ -1,6 +1,4 @@
-from re import search
 import tweepy
-import time
 
 from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 

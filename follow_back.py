@@ -1,8 +1,6 @@
-from re import search
 import tweepy
-import time
 
-from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
+from secrets import ACCESS_TOKEN, ACCESS_TOKEN_SECRET, API_KEY, API_SECRET_KEY
 
 # Twitter authorisation
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)

@@ -2,9 +2,8 @@ import tweepy
 import random
 import requests
 import nltk
-from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
-# Typing
+from secrets import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 from typing import Any, Tuple, List
 
 # POS tagging
