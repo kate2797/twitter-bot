@@ -26,4 +26,4 @@ def like_by_keywords(number_of_tweets, keywords):
 
 
 like_by_keywords(
-    10, ["100DaysOfProjects", "100DaysOfCloud", "100DaysOfCode", "CodeNewbie"])
+    200, ["100DaysOfCode", "CodeNewbie"])
